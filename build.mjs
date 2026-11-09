@@ -24,7 +24,7 @@ if (!pw) {
 if (!pw || pw.length < 4) { console.error("密碼至少 4 個字。"); process.exit(1); }
 
 const app = readFileSync(new URL("./src/app.html", import.meta.url), "utf8");
-const full = `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"></head><body>${app}</body></html>`;
+const full = `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"></head><body>${app}</body></html>`;
 
 const enc = new TextEncoder();
 const salt = crypto.getRandomValues(new Uint8Array(16));

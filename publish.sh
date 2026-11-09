@@ -8,8 +8,8 @@ REPO=kafutw/travel-quote
 node build.mjs
 
 [ -d .git ] || { git init -q -b main; }
-printf 'src/\n*.log\n.DS_Store\n' > .gitignore
-git add index.html .gitignore build.mjs publish.sh
+printf 'src/\nicons/\n*.log\n.DS_Store\n' > .gitignore
+git add index.html .gitignore build.mjs publish.sh og.png favicon.png apple-touch-icon.png
 git commit -qm "更新外縣市交通費試算" || echo "內容沒有變動"
 
 if ! git remote get-url origin >/dev/null 2>&1; then
